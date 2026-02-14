@@ -6,17 +6,15 @@ terraform {
     }
   }
 
-  # S3 bucket region (where tfstate is stored)
   backend "s3" {
     bucket = "cluster-003"
     key    = "ajs/terraform.tfstate"
-    region = "ap-southeast-1"   # ← Bucket region
+    region = "ap-southeast-1"
   }
 }
 
-# This is where your infrastructure will be created
 provider "aws" {
-  region = "us-east-1"          # ← Your EKS region
+  region = "us-east-1"
 }
 
 locals {
@@ -50,8 +48,3 @@ locals {
   }
 }
 
-
-  tags = {
-    Example = "vgs_cluster"
-  }
-}
