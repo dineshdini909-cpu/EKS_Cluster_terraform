@@ -7,8 +7,8 @@ terraform {
   }
 
   backend "s3" {
-    bucket = "cluster-003"
-    key    = "ajs/terraform.tfstate"
+    bucket = "cluster-003-dinesh"
+    key    = "arn:aws:s3:::cluster-003-dinesh"
     region = "us-east-1"
   }
 }
